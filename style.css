@@ -2,6 +2,10 @@
   margin: 15px 10px;
 }
 
+.title{
+  background-color: #00529b;
+  color: azure;
+}
 .tableWrapper {
   max-height: 450px;
   overflow: auto;
@@ -26,5 +30,28 @@
 
 .addBtn{
   margin: 3% auto;
-  width: 40%
+  width: 40%;
+  background-color: #4f75BB;
+  color: azure;
+
+}
+
+.addBtn:hover{
+
+  background-color: #00529b;
+  color: azure;
+
+}
+
+.table{
+
+  background-color: #ffefde;
+}
+
+
+.jumbotron{
+
+  margin-top: 1.5%;
+  background-color: #FF9D3d;
+
 }
