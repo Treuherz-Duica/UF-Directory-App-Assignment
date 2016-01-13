@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Introduction to Front-end development with Angular.js
 We will continue to build upon our directory application by creating a front-end interface with Angular.js to display listings, as well as the ability to add new listings and delete old ones.
 
@@ -46,3 +47,12 @@ You *do not* need to go through all of these, just start to get familiar enough 
 - [ng-click](https://docs.angularjs.org/api/ng/directive/ngClick)
 
 ### Assignment 
+=======
+# CEN3031 Assignment
+
+This repo contains 5 assignments for CEN3031.
+Switch branches to view the assignments.
+
+## [Assignment 1](https://github.com/CEN3031-spr16/UF-Directory-App-Assignment/tree/Assignment1)
+Introduction to HTTP and Asynchronous Programming using Node.js
+>>>>>>> 0b80a7896b02b172bd18bd4f93e7d4dcddebac8b
