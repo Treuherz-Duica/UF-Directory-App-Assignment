@@ -55,7 +55,7 @@
 .ng-hide-add         { animation:0.2s lightSpeedOut ease; }
 
 /* when showing the picture */
-.ng-hide-remove      { animation:0.2s flipInX ease; }
+/*.ng-hide-remove      { animation:0.2s flipInX ease; }*/
 
 /* ANIMATIONS (FROM ANIMATE.CSS) ======================== */
 /* flip in */
