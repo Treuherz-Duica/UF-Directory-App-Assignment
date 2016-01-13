@@ -6,6 +6,10 @@
   background-color: #00529b;
   color: azure;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> c826d0090d73a45b0cb2621f92034e7ca0bd3e3d
 .tableWrapper {
   max-height: 450px;
   overflow: auto;
@@ -31,6 +35,7 @@
 .addBtn{
   margin: 3% auto;
   width: 40%;
+<<<<<<< HEAD
   background-color: #4f75BB;
   color: azure;
 
@@ -123,4 +128,23 @@
     transform: translate3d(100%, 0, 0) skewX(30deg);
     opacity: 0;
   }
+=======
+
+  background-color: #4F75BB;
+  color: azure;
+}
+
+.addBtn:hover{
+  background-color: #00529b;
+  color: azure;
+}
+
+.jumbotron{
+  margin-top: 1.5%;
+  background-color: #ff9d3d;
+}
+
+.table{
+  background-color: #ffefde;
+>>>>>>> c826d0090d73a45b0cb2621f92034e7ca0bd3e3d
 }
