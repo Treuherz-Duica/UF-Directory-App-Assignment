@@ -6,8 +6,8 @@
   </head>
   <body ng-app="directoryApp">
     <div class="container">
-      <div class="row title">
-        <h1>UF Directory App</h1>
+      <div class="title row">
+        <h1 class = "titleOffset"><span class = "glyphicon glyphicon-sort-by-attributes"></span> UF Directory App</h1>
       </div>
       <div class="row" ng-controller="ListingsController">
         <div class="col-md-6">
@@ -21,11 +21,14 @@
                 <th>Code</th>
                 <th>Building Name</th>
                 <th></th>
+
               </tr>
-              <tr ng-repeat="item in listings | filter:searchText" class="listingItem" ng-click="showDetails(item)">
+              <tr ng-repeat="item in listings | filter:searchText | orderBy: 'code'" class="listingItem" ng-click="showDetails(item)">
                 <td>{{item.code}}</td>
                 <td>{{item.name}}</td>
-                <td><span class="glyphicon glyphicon-remove-circle" ng-click="deleteListing(item)"></span></td>
+                <td><span class="glyphicon glyphicon-edit" ng-click="editListing(item)"></span>
+                <span class="glyphicon glyphicon-remove-circle" ng-click="deleteListing(item)"></span></td>
+
               </tr>
             </table>
           </div>
@@ -34,7 +37,7 @@
           <div class="jumbotron">
             <div class="DetailedInfo" ng-show="showDets">
               <h2>Detailed Information</h2>
-              <div ng-show="currentDetail.name">
+              <div ng-show="currentDetail.code">
                 <label>Code:</label>
                  <div>
                    {{currentDetail.code}}
@@ -56,13 +59,13 @@
                   {{currentDetail.address}}
                  </div>
               </div>
-              <div ng-hide="currentDetail.name">
+              <div ng-hide="currentDetail.code">
                 <p>
                   Select an entry from the table to view details.
                 </p>
               </div>
             </div>
-            <form class="input-group" id="newListing" ng-submit="addListing()" ng-hide="showDets">
+            <form class="input-group" id="newListing" ng-submit="addListing()" ng-hide="hideAdd">
               <h2>Add New Listing</h2>
               <div class="form-group">
                 <label for="code">Code:</label>
@@ -88,9 +91,35 @@
                 <button type="button" name="cancel" class="btn btn-default addBtn" ng-click="clearForm()">Cancel</button>
               </div>
             </form>
+            <form class="input-group" id="oldListing" ng-submit = "finishEdit()" ng-hide="hideEdit">
+              <h2>Edit</h2>
+              <div class="form-group">
+                <label for="code">Code:</label>
+                <input type="text" class="form-control" id="code" ng-model="oldListing.code">
+              </div>
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" ng-model="oldListing.name">
+              </div>
+              <div class="form-group">
+                <label>Coordinates:</label>
+                <div class="form-group">
+                  <input type="text" class="form-control coord lat" id="latitude" ng-model="oldListing.coordinates.latitude">
+                  <input type="text" class="form-control coord long" id="longitude" ng-model="oldListing.coordinates.longitude">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address" ng-model="oldListing.address">
+              </div>
+              <div class="form-group">
+                <button type="submit" name="addListingBtn" class="btn btn-default addBtn">Save</button>
+                <button type="button" name="cancel" class="btn btn-default addBtn" ng-click="clearForm()">Cancel</button>
+              </div>
+            </form>
           </div>
           <div class="form-group">
-            <button style="margin-top: 0;" ng-show="showDets" type="button" name="showAddForm" class="btn btn-default addBtn" ng-click="showDets = !showDets">Add Listing</button>
+            <button style="margin-top: 0;" ng-show="showDets" type="button" name="showAddForm" class="btn btn-default addBtn" ng-click="showDets = !showDets; hideAdd = !hideAdd">Add Listing</button>
           </div>
         </div>
       </div>
@@ -99,9 +128,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
     <script src="https://code.angularjs.org/1.4.3/angular-animate.min.js"></script>
-    
+
     <script src="app.js"></script>
     <script src="listingController.js"></script>
     <script src="listingFactory.js"></script>
   </body>
+  <footer class="foot">
+    <span>
+      Made with <i class = "glyphicon glyphicon-heart"></i> in Gainesville
+    </span>
+  </footer>
 </html>

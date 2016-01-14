@@ -5,6 +5,11 @@
 .title{
   background-color: #00529b;
   color: azure;
+  font-family: verdana;
+}
+
+.titleOffset{
+  margin-left: 20px;
 }
 
 .tableWrapper {
@@ -51,8 +56,14 @@
    background-color: #ffefde;
  }
 
+ .foot{
+   margin-top:3%;
+   margin-left:43.5%;
+
+ }
+
  /* when hiding the picture */
-.ng-hide-add         { animation:0.2s lightSpeedOut ease; }
+.ng-hide-add         { animation:0.5s lightSpeedOut ease; }
 
 /* when showing the picture */
 /*.ng-hide-remove      { animation:0.2s flipInX ease; }*/
