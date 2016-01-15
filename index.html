@@ -21,12 +21,13 @@
                 <th>Code</th>
                 <th>Building Name</th>
                 <th></th>
+                <th></th>
               </tr>
               <tr ng-repeat="item in listings | filter:searchText | orderBy: 'code'" class="listingItem" ng-click="showDetails(item)">
                 <td>{{item.code}}</td>
                 <td>{{item.name}}</td>
-                <td><span class="glyphicon glyphicon-edit" ng-click="editListing(item)"></span>
-                <span class="glyphicon glyphicon-remove-circle" ng-click="deleteListing(item)"></span></td>
+                <td><span class="glyphicon glyphicon-edit" ng-click="editListing(item)"></span></td>
+                <td><span class="glyphicon glyphicon-remove-circle" ng-click="deleteListing(item)"></span></td>
 
               </tr>
             </table>
@@ -36,7 +37,7 @@
           <div class="jumbotron">
             <div class="DetailedInfo" ng-show="showDets">
               <h2>Detailed Information</h2>
-              <div ng-show="currentDetail.name || currentDetail.code">
+              <div ng-show="currentDetail.name && currentDetail.code">
                 <label>Code:</label>
                  <div>
                    {{currentDetail.code}}

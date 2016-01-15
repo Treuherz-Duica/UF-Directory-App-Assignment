@@ -30,7 +30,8 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.deleteListing = function(listing) {
       var index = $scope.listings.indexOf(listing);
       $scope.listings.splice(index, 1);
-      $scope.currentDetail.code = false;
+      if(listing == $scope.currentDetail)
+        $scope.currentDetail = {};
     };
 
     $scope.showDetails = function(listing) {
